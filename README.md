@@ -76,3 +76,14 @@ com.ulanzi.tbcalendar.ulanziPlugin/
 ├── images/                  ikony
 └── node_modules/ws          biblioteka WebSocket
 ```
+
+## O wtyczce i licencja
+
+Wtyczka jest **darmowa**. Napisałam ją we współpracy z [Claude](https://claude.ai), asystentem AI firmy Anthropic.
+
+Możesz ją bezpłatnie pobierać, instalować i używać, także w pracy. Obowiązują dwa zastrzeżenia:
+
+- **nie wolno jej modyfikować** ani rozpowszechniać zmienionych wersji bez mojej zgody (o zgodę poproś, zakładając [Issue](../../issues)),
+- **nie wolno na niej zarabiać**: sprzedawać jej, pobierać opłat za jej udostępnienie ani dołączać do płatnych produktów.
+
+Pełne warunki są w pliku [LICENSE](LICENSE). Dołączona biblioteka `ws` ma własną licencję MIT.

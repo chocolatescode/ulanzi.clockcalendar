@@ -1,0 +1,42 @@
+Copyright (c) 2026 chocolatescode. Wszelkie prawa zastrzeżone. / All rights reserved.
+
+Wtyczka „Kalendarz Thunderbird” (ulanzi.clockcalendar) jest udostępniana bezpłatnie
+na następujących warunkach:
+
+1. Możesz bezpłatnie pobierać, instalować i używać wtyczki na własnych komputerach,
+   także w pracy.
+2. Nie wolno modyfikować wtyczki ani rozpowszechniać jej zmienionych wersji
+   bez pisemnej zgody autora.
+3. Nie wolno zarabiać na wtyczce: sprzedawać jej, pobierać opłat za jej udostępnienie,
+   dołączać jej do płatnych produktów ani usług, ani w inny sposób wykorzystywać jej
+   komercyjnie.
+4. Przekazując wtyczkę dalej w niezmienionej postaci, trzeba dołączyć ten plik licencji.
+5. Wtyczka jest dostarczana „tak jak jest”, bez żadnej gwarancji. Autor nie odpowiada
+   za szkody wynikłe z jej używania.
+
+Zgody na zmiany można poprosić, zakładając zgłoszenie (Issue) w repozytorium:
+https://github.com/chocolatescode/ulanzi.clockcalendar
+
+Dołączona biblioteka `ws` (folder node_modules/ws) ma własną licencję MIT,
+zapisaną w pliku node_modules/ws/LICENSE.
+
+---
+
+The "Kalendarz Thunderbird" plugin (ulanzi.clockcalendar) is provided free of charge
+on the following terms:
+
+1. You may download, install and use the plugin free of charge on your own computers,
+   including at work.
+2. You may not modify the plugin or distribute modified versions of it without
+   the author's written permission.
+3. You may not make money from the plugin: you may not sell it, charge for access to it,
+   bundle it with paid products or services, or otherwise use it commercially.
+4. If you pass the plugin on unchanged, you must include this license file.
+5. The plugin is provided "as is", without warranty of any kind. The author is not
+   liable for any damage arising from its use.
+
+To ask for permission to make changes, open an Issue in the repository:
+https://github.com/chocolatescode/ulanzi.clockcalendar
+
+The bundled `ws` library (node_modules/ws) is covered by its own MIT license,
+included in node_modules/ws/LICENSE.
