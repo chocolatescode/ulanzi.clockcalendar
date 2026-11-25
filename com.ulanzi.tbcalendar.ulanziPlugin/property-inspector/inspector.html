@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+  <title>Kalendarz</title>
+  <link rel="stylesheet" href="../libs/css/uspi.css">
+  <style>
+    .color-input { height: 26px; padding: 0 2px; border: none; background: transparent; cursor: pointer; }
+    .hidden-row { display: none !important; }
+    .text-input { box-sizing: border-box; min-width: 0; }
+    .path-row { display: flex; gap: 4px; align-items: center; }
+    .path-row .text-input { flex: 1; width: auto; }
+    .path-row .browse-btn { flex: none; width: 36px !important; min-width: 0; padding: 0; cursor: pointer; }
+    .presets { display: flex; gap: 10px; flex-wrap: wrap; font-size: 12px; }
+    .presets a { color: #4aa3ff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="uspi-wrapper hidden">
+    <form id="property-inspector">
+      <div class="uspi-item">
+        <div class="uspi-item-label">Kliknięcie otwiera</div>
+        <select class="uspi-item-value select" id="openMode" name="openMode">
+          <option value="thunderbird">Kalendarz Thunderbirda</option>
+          <option value="outlook">Kalendarz Outlooka (klasyczny)</option>
+          <option value="program">Własny program…</option>
+          <option value="url">Stronę / link…</option>
+        </select>
+      </div>
+      <div class="uspi-item only-program">
+        <div class="uspi-item-label">Program</div>
+        <div class="uspi-item-value path-row">
+          <input class="uspi-item-value text-input" id="programPath" name="programPath" type="text" placeholder="C:\…\program.exe">
+          <button type="button" id="browse" class="browse-btn">…</button>
+        </div>
+      </div>
+      <div class="uspi-item only-program">
+        <div class="uspi-item-label">Parametry</div>
+        <input class="uspi-item-value text-input" id="programArgs" name="programArgs" type="text" placeholder="np. -calendar">
+      </div>
+      <div class="uspi-item only-url">
+        <div class="uspi-item-label">Adres</div>
+        <input class="uspi-item-value text-input" id="url" name="url" type="text" placeholder="https://calendar.google.com">
+      </div>
+      <div class="uspi-item only-url">
+        <div class="uspi-item-label empty"></div>
+        <div class="uspi-item-value presets">
+          <a href="#" data-url="https://calendar.google.com/calendar">Google</a>
+          <a href="#" data-url="https://outlook.office.com/calendar">Outlook (praca)</a>
+          <a href="#" data-url="https://outlook.live.com/calendar">Outlook.com</a>
+        </div>
+      </div>
+
+      <div class="uspi-item">
+        <div class="uspi-item-label">Wygląd</div>
+        <select class="uspi-item-value select" id="style" name="style">
+          <option value="home">Zegar (jak w domu)</option>
+          <option value="plain">Sam napis</option>
+          <option value="card">Kartka z kalendarza</option>
+        </select>
+      </div>
+      <div class="uspi-item only-home">
+        <div class="uspi-item-label">Pokazuj</div>
+        <select class="uspi-item-value select" id="homeContent" name="homeContent">
+          <option value="date">Data</option>
+          <option value="timedate">Data + godzina</option>
+          <option value="full">Data + godzina + dzień tygodnia</option>
+        </select>
+      </div>
+      <div class="uspi-item">
+        <div class="uspi-item-label">Język</div>
+        <select class="uspi-item-value select" id="lang" name="lang">
+          <option value="pl">Polski</option>
+          <option value="en">English</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="cs">Čeština</option>
+          <option value="uk">Українська</option>
+          <option value="zh">中文</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+        </select>
+      </div>
+
+      <div class="uspi-item not-home">
+        <div class="uspi-item-label">Dzień tygodnia</div>
+        <div class="uspi-item-value"><div class="uspi-item-child" style="margin-top:-1px;">
+          <input id="weekday" name="weekday" type="checkbox" checked>
+          <label for="weekday" class="sdpi-item-label"><span></span></label>
+        </div></div>
+      </div>
+      <div class="uspi-item not-home">
+        <div class="uspi-item-label">Dzień miesiąca</div>
+        <div class="uspi-item-value"><div class="uspi-item-child" style="margin-top:-1px;">
+          <input id="day" name="day" type="checkbox" checked>
+          <label for="day" class="sdpi-item-label"><span></span></label>
+        </div></div>
+      </div>
+      <div class="uspi-item not-home">
+        <div class="uspi-item-label">Miesiąc</div>
+        <div class="uspi-item-value"><div class="uspi-item-child" style="margin-top:-1px;">
+          <input id="month" name="month" type="checkbox" checked>
+          <label for="month" class="sdpi-item-label"><span></span></label>
+        </div></div>
+      </div>
+      <div class="uspi-item not-home">
+        <div class="uspi-item-label">Format daty</div>
+        <select class="uspi-item-value select" id="dateFormat" name="dateFormat">
+          <option value="text">Słownie (23 listopada)</option>
+          <option value="numeric">Cyfrowo (23.11)</option>
+        </select>
+      </div>
+      <div class="uspi-item not-home">
+        <div class="uspi-item-label">Godzina i minuta</div>
+        <div class="uspi-item-value"><div class="uspi-item-child" style="margin-top:-1px;">
+          <input id="time" name="time" type="checkbox" checked>
+          <label for="time" class="sdpi-item-label"><span></span></label>
+        </div></div>
+      </div>
+
+      <div class="uspi-item">
+        <div class="uspi-item-label">Kolor tła</div>
+        <input class="uspi-item-value color-input" id="bgColor" name="bgColor" type="color" value="#000000">
+      </div>
+      <div class="uspi-item only-plain">
+        <div class="uspi-item-label">Kolor napisu</div>
+        <input class="uspi-item-value color-input" id="textColor" name="textColor" type="color" value="#ffffff">
+      </div>
+
+      <div class="uspi-item only-card">
+        <div class="uspi-item-label">Kolor paska</div>
+        <input class="uspi-item-value color-input" id="stripColor" name="stripColor" type="color" value="#0078d4">
+      </div>
+      <div class="uspi-item only-card">
+        <div class="uspi-item-label">Napis na pasku</div>
+        <input class="uspi-item-value color-input" id="stripTextColor" name="stripTextColor" type="color" value="#ffffff">
+      </div>
+      <div class="uspi-item only-card">
+        <div class="uspi-item-label">Kolor kartki</div>
+        <input class="uspi-item-value color-input" id="cardColor" name="cardColor" type="color" value="#ffffff">
+      </div>
+      <div class="uspi-item only-card">
+        <div class="uspi-item-label">Napis na kartce</div>
+        <input class="uspi-item-value color-input" id="cardTextColor" name="cardTextColor" type="color" value="#1a1a1a">
+      </div>
+    </form>
+  </div>
+
+  <script src="../libs/js/constants.js"></script>
+  <script src="../libs/js/eventEmitter.js"></script>
+  <script src="../libs/js/timers.js"></script>
+  <script src="../libs/js/utils.js"></script>
+  <script src="../libs/js/ulanziApi.js"></script>
+  <script src="./inspector.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+# Po wypchnięciu tagu (np. v2.0.0) buduje zip z wtyczką i dodaje go do wydania (Releases).
+name: Release
+on:
+  push:
+    tags: ["v*"]
+permissions:
+  contents: write
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Zip plugin
+        run: zip -r com.ulanzi.tbcalendar.ulanziPlugin.zip com.ulanzi.tbcalendar.ulanziPlugin -x "*/plugin.log*"
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: com.ulanzi.tbcalendar.ulanziPlugin.zip
+          generate_release_notes: true

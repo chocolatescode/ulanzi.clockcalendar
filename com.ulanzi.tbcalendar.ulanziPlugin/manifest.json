@@ -1,0 +1,42 @@
+{
+  "Author": "kbonter",
+  "Name": "Kalendarz Thunderbird",
+  "Description": "Zegar z datą i dniem tygodnia (11 języków); kliknięcie otwiera kalendarz Thunderbirda, Outlooka, program lub stronę.",
+  "Icon": "images/plugin.png",
+  "Version": "2.0.0",
+  "Type": "JavaScript",
+  "CodePath": "plugin/app.js",
+  "UUID": "com.ulanzi.ulanzistudio.tbcalendar",
+  "Category": "Thunderbird",
+  "CategoryIcon": "images/plugin.png",
+  "Actions": [
+    {
+      "Name": "Kalendarz",
+      "Icon": "images/plugin.png",
+      "Tooltip": "Data i godzina; kliknięcie otwiera kalendarz Thunderbirda",
+      "PropertyInspectorPath": "property-inspector/inspector.html",
+      "UUID": "com.ulanzi.ulanzistudio.tbcalendar.open",
+      "state": 0,
+      "States": [
+        {
+          "Name": "Kalendarz",
+          "Image": "images/key.png"
+        }
+      ],
+      "SupportedInMultiActions": true,
+      "Controllers": [
+        "Keypad"
+      ],
+      "Devices": []
+    }
+  ],
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "Software": {
+    "MinVersion": "2.1.0"
+  }
+}
