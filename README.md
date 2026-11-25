@@ -12,10 +12,10 @@ Kliknięcie otwiera kalendarz w Thunderbirdzie, nawet gdy okno jest zminimalizow
 ## Co potrafi
 
 - **Trzy wyglądy:**
-  - „Zegar” – duża godzina i data, opcjonalnie dzień tygodnia na górze,
-  - „Sam napis” – dzień tygodnia, dzień, miesiąc i godzina w kolumnie,
-  - „Kartka z kalendarza” – kartka z kolorowym paskiem i spiralką.
-- **Co pokazać (wygląd „Zegar”):** samą datę, datę z godziną albo datę z godziną i dniem tygodnia.
+  - **Digital clock** – duża godzina i data, opcjonalnie dzień tygodnia na górze,
+  - **Text** – dzień tygodnia, dzień, miesiąc i godzina w kolumnie,
+  - **Calendar page** – kartka z kalendarza z kolorowym paskiem i spiralką.
+- **Co pokazać (wygląd „Digital clock”):** samą datę, datę z godziną albo datę z godziną i dniem tygodnia.
 - **11 języków:** polski, angielski, niemiecki, francuski, hiszpański, włoski, czeski, ukraiński, chiński, japoński i koreański.
 - **Własne kolory** tła, napisu, paska i kartki.
 - **Co otwiera kliknięcie:**
@@ -68,7 +68,7 @@ com.ulanzi.tbcalendar.ulanziPlugin/
 ├── manifest.json            opis wtyczki dla Ulanzi Studio
 ├── plugin/
 │   ├── app.js               połączenie ze Studio, rysowanie przycisku, obsługa kliknięć
-│   ├── svgrender.js         wyglądy „Sam napis” i „Kartka z kalendarza”
+│   ├── svgrender.js         wyglądy „Text” i „Calendar page”
 │   ├── lang.js              nazwy dni i miesięcy w 11 językach
 │   └── open-calendar.ps1    przywołanie okna Thunderbirda i przejście do kalendarza
 ├── property-inspector/      panel ustawień przycisku w Ulanzi Studio

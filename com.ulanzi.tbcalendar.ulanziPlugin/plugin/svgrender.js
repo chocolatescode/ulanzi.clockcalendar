@@ -1,4 +1,4 @@
-// Style "Sam napis" i "Kartka z kalendarza" rysowane jako SVG czcionką systemową,
+// Style "Text" i "Calendar page" rysowane jako SVG czcionką systemową,
 // żeby działały w każdym języku (także chińskim, japońskim, koreańskim).
 // Układ odwzorowuje dawny renderer PNG (render.js): te same proporcje i odstępy.
 

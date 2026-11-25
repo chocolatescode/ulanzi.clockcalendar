@@ -97,7 +97,7 @@ function openCalendar(o = DEFAULTS) {
   }
 }
 
-// --- wygląd "jak w domu" (z wtyczki Zegar + Kalendarz): SVG, Segoe UI ---
+// --- wygląd "Digital clock": SVG, Segoe UI ---
 const { H_LANG } = require("./lang");
 const pad2 = (n) => String(n).padStart(2, "0");
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
